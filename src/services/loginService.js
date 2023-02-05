@@ -6,7 +6,7 @@ const loginValidation = async (email, password) => {
   });
   if (!validUser) return { type: '400', message: 'Invalid fields' };
 
-  return { type: null, message: '' };
+  return { type: null, message: validUser };
 };
 
 module.exports = {

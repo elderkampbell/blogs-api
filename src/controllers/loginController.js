@@ -12,8 +12,7 @@ const loginValidation = async (req, res) => {
 
   if (type) return res.status(type).json({ message });
 
-  const payload = { email: req.body.email };
-  const token = jwt.sign(payload, JWT_SECRET);
+  const token = jwt.sign(message.dataValues, JWT_SECRET, { expiresIn: '10m', algorithm: 'HS256' });
 
   return res.status(200).json({ token });
 };
