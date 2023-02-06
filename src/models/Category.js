@@ -3,12 +3,17 @@ module.exports = (sequelize, DataTypes) => {
     'Category',
     {
       id: {
-        type: DataTypes.NUMBER,
+        type: DataTypes.INTEGER,
         primaryKey: true,
         autoIncrement: true,
       },
       name: DataTypes.STRING,
     },
+    {
+      timestamps: false,
+      tableName: 'categories',
+      underscored: true,
+    }
     );
 
   return Category;
